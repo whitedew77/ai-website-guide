@@ -1,7 +1,7 @@
 {
   "name": "AI 建站向导",
   "short_name": "建站向导",
-  "description": "Spec 到上线的证据化 AI 网站制作 SOP",
+  "description": "回答 6 个问题，生成从网站规划、开发测试到部署上线的 8 阶段 AI 建站路线。",
   "lang": "zh-CN",
   "start_url": "./",
   "scope": "./",

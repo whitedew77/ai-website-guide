@@ -1,11 +1,51 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
+const SITE_URL = "https://whitedew77.github.io/ai-website-guide/";
+const SITE_NAME = "AI 建站向导";
+const SITE_TITLE = "AI 建站向导：6 问生成网站规划、开发与部署路线";
+const SITE_DESCRIPTION =
+  "面向零基础用户的本地优先 AI 建站路线生成器。回答 6 个问题，获得从需求规划、技术选型、开发测试到部署上线的 8 阶段路线、证据 Gate 和提示词。";
+const STRUCTURED_DATA = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  name: SITE_NAME,
+  alternateName: "AI Website Roadmap Builder",
+  url: SITE_URL,
+  description: SITE_DESCRIPTION,
+  applicationCategory: "EducationalApplication",
+  operatingSystem: "Any device with a modern web browser",
+  isAccessibleForFree: true,
+  inLanguage: "zh-CN",
+  featureList: [
+    "六问生成 AI 建站路线",
+    "八阶段证据 Gate",
+    "提示词生成器",
+    "本地浏览器保存与 JSON 导入导出",
+    "PWA 与单文件离线版",
+  ],
+};
+
 export const metadata: Metadata = {
-  title: "AI 建站向导 · Spec 到上线的 SOP",
-  description: "面向零基础用户的 AI 网站制作向导：六问建站路线、证据化八阶段 SOP、提示词、技术、术语与 GitHub Skills。",
+  metadataBase: new URL(SITE_URL),
+  title: SITE_TITLE,
+  description: SITE_DESCRIPTION,
   manifest: "./manifest.webmanifest",
-  applicationName: "AI 建站向导",
+  applicationName: SITE_NAME,
+  alternates: { canonical: SITE_URL },
+  openGraph: {
+    type: "website",
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    locale: "zh_CN",
+  },
+  twitter: {
+    card: "summary",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+  },
   icons: {
     icon: [
       { url: "./icon-192.png", sizes: "192x192", type: "image/png" },
@@ -25,6 +65,12 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="zh-CN">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(STRUCTURED_DATA).replace(/</g, "\\u003c") }}
+        />
+      </head>
       <body>{children}</body>
     </html>
   );

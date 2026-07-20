@@ -18,8 +18,11 @@ test("server-renders the public beginner entry", async () => {
   assert.equal(response.status, 200);
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
   const html = await response.text();
-  assert.match(html, /<title>AI 建站向导 · Spec 到上线的 SOP<\/title>/i);
+  assert.match(html, /<title>AI 建站向导：6 问生成网站规划、开发与部署路线<\/title>/i);
+  assert.match(html, /<link rel="canonical" href="https:\/\/whitedew77\.github\.io\/ai-website-guide\/"/i);
+  assert.match(html, /"@type":"WebApplication"/);
   assert.match(html, /回答 6 个问题/);
+  assert.match(html, /生成从网站规划到部署上线的完整路线/);
   assert.match(html, /创建新网站计划/);
   assert.match(html, /继续 \/ 导入已有项目/);
   assert.match(html, /查技术、术语和 Skills/);
@@ -49,6 +52,8 @@ test("build contains a self-contained offline snapshot and reviewed catalog", as
   assert.doesNotMatch(offline, /<script[^>]+src=|<link[^>]+stylesheet/i);
   assert.match(offline, /AI 建站向导/);
   assert.match(staticIndex, /<link rel="manifest" href="manifest\.webmanifest">/);
+  assert.match(staticIndex, /<meta property="og:title" content="AI 建站向导：6 问生成网站规划、开发与部署路线">/);
+  assert.match(staticIndex, /<script type="application\/ld\+json">[\s\S]*"@type":"WebApplication"[\s\S]*<\/script>/);
   assert.doesNotMatch(staticIndex, /<script[^>]+src=|<link[^>]+stylesheet/i);
   const parsed = JSON.parse(catalog);
   assert.equal(parsed.reviewStatus, "reviewed");
