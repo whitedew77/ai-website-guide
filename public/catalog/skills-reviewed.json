@@ -1,0 +1,844 @@
+{
+  "schemaVersion": 1,
+  "catalogVersion": "2026.07.20.2",
+  "reviewedAt": "2026-07-20",
+  "reviewStatus": "reviewed",
+  "skills": [
+    {
+      "id": "openai-frontend-app-builder",
+      "name": "frontend-app-builder",
+      "tier": "core",
+      "repo": "openai/plugins",
+      "path": "plugins/build-web-apps/skills/frontend-app-builder/SKILL.md",
+      "ref": "main",
+      "publisher": "OpenAI",
+      "license": "根目录未明确显示统一许可证，使用前逐文件复核",
+      "stageIds": [
+        4,
+        5,
+        6
+      ],
+      "purpose": "在 Codex 的 Web 构建插件中组织前端应用实现流程。",
+      "limitations": "它是插件内 Skill，不等同于一个可单独复制后必然工作的通用 Skill。",
+      "permissions": [
+        "可能调用插件提供的网站构建工具",
+        "可能创建或修改本地代码"
+      ],
+      "risk": "medium",
+      "installType": "codex-plugin",
+      "installNote": "在 Codex 的 Plugins 页面查找 Build Web Apps；安装前查看插件清单与权限。本页不提供未经核验的 Shell 命令。",
+      "sourceUrl": "https://github.com/openai/plugins/tree/main/plugins/build-web-apps/skills/frontend-app-builder",
+      "reviewedAt": "2026-07-20",
+      "score": {
+        "fit": 96,
+        "maintenance": 92,
+        "safety": 75,
+        "clarity": 90,
+        "portability": 58,
+        "popularity": 70
+      },
+      "maintenanceNote": "2026-07-20 核对时公开仓库与精确路径可访问；归档状态和最近推送由白名单更新器继续复核。",
+      "issueReleaseNote": "按仓库级 Issue、Release 与提交记录判断维护信号；不把仓库活跃度当成此 Skill 的独立版本承诺。"
+    },
+    {
+      "id": "openai-frontend-testing-debugging",
+      "name": "frontend-testing-debugging",
+      "tier": "core",
+      "repo": "openai/plugins",
+      "path": "plugins/build-web-apps/skills/frontend-testing-debugging/SKILL.md",
+      "ref": "main",
+      "publisher": "OpenAI",
+      "license": "根目录未明确显示统一许可证，使用前逐文件复核",
+      "stageIds": [
+        6,
+        7
+      ],
+      "purpose": "为前端测试、复现和调试提供插件内工作流。",
+      "limitations": "浏览器工具是否可用取决于当前 Codex 环境；不能替代业务验收。",
+      "permissions": [
+        "可能控制浏览器",
+        "可能运行测试命令",
+        "可能修改本地代码"
+      ],
+      "risk": "medium",
+      "installType": "codex-plugin",
+      "installNote": "通过 Codex Plugins 页面查看 Build Web Apps；核对浏览器与本地执行权限后再安装。",
+      "sourceUrl": "https://github.com/openai/plugins/tree/main/plugins/build-web-apps/skills/frontend-testing-debugging",
+      "reviewedAt": "2026-07-20",
+      "score": {
+        "fit": 95,
+        "maintenance": 92,
+        "safety": 72,
+        "clarity": 90,
+        "portability": 55,
+        "popularity": 70
+      },
+      "maintenanceNote": "2026-07-20 核对时公开仓库与精确路径可访问；归档状态和最近推送由白名单更新器继续复核。",
+      "issueReleaseNote": "按仓库级 Issue、Release 与提交记录判断维护信号；不把仓库活跃度当成此 Skill 的独立版本承诺。"
+    },
+    {
+      "id": "openai-react-best-practices",
+      "name": "react-best-practices（OpenAI 示例）",
+      "tier": "core",
+      "repo": "openai/plugins",
+      "path": "plugins/build-web-apps/skills/react-best-practices/SKILL.md",
+      "ref": "main",
+      "publisher": "OpenAI",
+      "license": "根目录未明确显示统一许可证，使用前逐文件复核",
+      "stageIds": [
+        5,
+        6,
+        7
+      ],
+      "purpose": "为 React 网站实现和评审提供插件内规则。",
+      "limitations": "只适合 React 项目；规则仍需与项目版本和官方文档核对。",
+      "permissions": [
+        "读取和评审本地代码",
+        "可能修改 React 代码"
+      ],
+      "risk": "medium",
+      "installType": "codex-plugin",
+      "installNote": "作为 Build Web Apps 插件的一部分使用；先确认你的项目确实使用 React。",
+      "sourceUrl": "https://github.com/openai/plugins/tree/main/plugins/build-web-apps/skills/react-best-practices",
+      "reviewedAt": "2026-07-20",
+      "score": {
+        "fit": 88,
+        "maintenance": 92,
+        "safety": 80,
+        "clarity": 88,
+        "portability": 55,
+        "popularity": 70
+      },
+      "maintenanceNote": "2026-07-20 核对时公开仓库与精确路径可访问；归档状态和最近推送由白名单更新器继续复核。",
+      "issueReleaseNote": "按仓库级 Issue、Release 与提交记录判断维护信号；不把仓库活跃度当成此 Skill 的独立版本承诺。"
+    },
+    {
+      "id": "openai-shadcn-best-practices",
+      "name": "shadcn-best-practices",
+      "tier": "conditional",
+      "repo": "openai/plugins",
+      "path": "plugins/build-web-apps/skills/shadcn-best-practices/SKILL.md",
+      "ref": "main",
+      "publisher": "OpenAI",
+      "license": "根目录未明确显示统一许可证，使用前逐文件复核",
+      "stageIds": [
+        4,
+        6
+      ],
+      "purpose": "在使用 shadcn/ui 时约束组件选择与实现。",
+      "limitations": "不适用于非 React 项目，也不能代替品牌与用户流程设计。",
+      "permissions": [
+        "可能添加或修改组件源码",
+        "可能运行组件安装命令"
+      ],
+      "risk": "medium",
+      "installType": "codex-plugin",
+      "installNote": "仅在项目确认使用 shadcn/ui 后，通过 Build Web Apps 插件使用。",
+      "sourceUrl": "https://github.com/openai/plugins/tree/main/plugins/build-web-apps/skills/shadcn-best-practices",
+      "reviewedAt": "2026-07-20",
+      "score": {
+        "fit": 76,
+        "maintenance": 91,
+        "safety": 72,
+        "clarity": 86,
+        "portability": 48,
+        "popularity": 68
+      },
+      "maintenanceNote": "2026-07-20 核对时公开仓库与精确路径可访问；归档状态和最近推送由白名单更新器继续复核。",
+      "issueReleaseNote": "按仓库级 Issue、Release 与提交记录判断维护信号；不把仓库活跃度当成此 Skill 的独立版本承诺。"
+    },
+    {
+      "id": "openai-stripe-best-practices",
+      "name": "stripe-best-practices",
+      "tier": "conditional",
+      "repo": "openai/plugins",
+      "path": "plugins/build-web-apps/skills/stripe-best-practices/SKILL.md",
+      "ref": "main",
+      "publisher": "OpenAI",
+      "license": "根目录未明确显示统一许可证，使用前逐文件复核",
+      "stageIds": [
+        3,
+        4,
+        6,
+        7,
+        8
+      ],
+      "purpose": "为采用 Stripe 的支付集成提供实现与检查指导。",
+      "limitations": "支付是高风险边界；Skill 不能替代地区可用性、法务、财务和官方文档核验。",
+      "permissions": [
+        "可能读写支付代码",
+        "可能需要联网查文档",
+        "可能接触测试凭据但不得写入提示词"
+      ],
+      "risk": "high",
+      "installType": "codex-plugin",
+      "installNote": "仅在已选 Stripe 且有支付负责人时使用；先核对插件权限与 Stripe 官方文档。",
+      "sourceUrl": "https://github.com/openai/plugins/tree/main/plugins/build-web-apps/skills/stripe-best-practices",
+      "reviewedAt": "2026-07-20",
+      "score": {
+        "fit": 68,
+        "maintenance": 90,
+        "safety": 62,
+        "clarity": 86,
+        "portability": 44,
+        "popularity": 66
+      },
+      "maintenanceNote": "2026-07-20 核对时公开仓库与精确路径可访问；归档状态和最近推送由白名单更新器继续复核。",
+      "issueReleaseNote": "按仓库级 Issue、Release 与提交记录判断维护信号；不把仓库活跃度当成此 Skill 的独立版本承诺。"
+    },
+    {
+      "id": "openai-supabase-best-practices",
+      "name": "supabase-best-practices",
+      "tier": "conditional",
+      "repo": "openai/plugins",
+      "path": "plugins/build-web-apps/skills/supabase-best-practices/SKILL.md",
+      "ref": "main",
+      "publisher": "OpenAI",
+      "license": "根目录未明确显示统一许可证，使用前逐文件复核",
+      "stageIds": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "purpose": "为采用 Supabase 的数据、认证和存储实现提供指导。",
+      "limitations": "行级安全、备份和生产权限仍需人工评审与真实环境测试。",
+      "permissions": [
+        "可能修改数据库与认证配置",
+        "可能运行迁移",
+        "可能需要联网"
+      ],
+      "risk": "high",
+      "installType": "codex-plugin",
+      "installNote": "仅在已选 Supabase 时使用；生产数据库写操作必须另行确认。",
+      "sourceUrl": "https://github.com/openai/plugins/tree/main/plugins/build-web-apps/skills/supabase-best-practices",
+      "reviewedAt": "2026-07-20",
+      "score": {
+        "fit": 74,
+        "maintenance": 90,
+        "safety": 60,
+        "clarity": 86,
+        "portability": 48,
+        "popularity": 68
+      },
+      "maintenanceNote": "2026-07-20 核对时公开仓库与精确路径可访问；归档状态和最近推送由白名单更新器继续复核。",
+      "issueReleaseNote": "按仓库级 Issue、Release 与提交记录判断维护信号；不把仓库活跃度当成此 Skill 的独立版本承诺。"
+    },
+    {
+      "id": "vercel-web-design-guidelines",
+      "name": "web-design-guidelines",
+      "tier": "core",
+      "repo": "vercel-labs/agent-skills",
+      "path": "skills/web-design-guidelines/SKILL.md",
+      "ref": "main",
+      "publisher": "Vercel Labs",
+      "license": "MIT",
+      "stageIds": [
+        4,
+        6,
+        7
+      ],
+      "purpose": "按一组 Web 界面规则审查可访问性、交互、表单、性能与响应式实现。",
+      "limitations": "通用规则不能替代品牌、真实用户与业务证据。",
+      "permissions": [
+        "读取 UI 代码",
+        "可能联网读取最新规则"
+      ],
+      "risk": "low",
+      "installType": "codex-skill",
+      "installCommand": "npx skills add vercel-labs/agent-skills",
+      "installNote": "命令来自仓库 README，会安装该仓库的一组 Skills；运行前先审查仓库和变更。",
+      "sourceUrl": "https://github.com/vercel-labs/agent-skills/tree/main/skills/web-design-guidelines",
+      "reviewedAt": "2026-07-20",
+      "score": {
+        "fit": 95,
+        "maintenance": 90,
+        "safety": 88,
+        "clarity": 93,
+        "portability": 84,
+        "popularity": 82
+      },
+      "maintenanceNote": "2026-07-20 核对时公开仓库与精确路径可访问；归档状态和最近推送由白名单更新器继续复核。",
+      "issueReleaseNote": "按仓库级 Issue、Release 与提交记录判断维护信号；不把仓库活跃度当成此 Skill 的独立版本承诺。"
+    },
+    {
+      "id": "vercel-react-best-practices",
+      "name": "react-best-practices（Vercel）",
+      "tier": "core",
+      "repo": "vercel-labs/agent-skills",
+      "path": "skills/react-best-practices/SKILL.md",
+      "ref": "main",
+      "publisher": "Vercel Labs",
+      "license": "MIT",
+      "stageIds": [
+        5,
+        6,
+        7
+      ],
+      "purpose": "为 React 与 Next.js 性能实现和评审提供按影响排序的规则。",
+      "limitations": "非 React 项目不应安装；规则随框架演进，需要核对项目版本。",
+      "permissions": [
+        "读取和修改 React 代码",
+        "可能联网读取最新规则"
+      ],
+      "risk": "low",
+      "installType": "codex-skill",
+      "installCommand": "npx skills add vercel-labs/agent-skills",
+      "installNote": "仓库级安装命令已在 README 显示；安装后仍需确认当前代理是否发现该 Skill。",
+      "sourceUrl": "https://github.com/vercel-labs/agent-skills/tree/main/skills/react-best-practices",
+      "reviewedAt": "2026-07-20",
+      "score": {
+        "fit": 88,
+        "maintenance": 90,
+        "safety": 86,
+        "clarity": 94,
+        "portability": 76,
+        "popularity": 84
+      },
+      "maintenanceNote": "2026-07-20 核对时公开仓库与精确路径可访问；归档状态和最近推送由白名单更新器继续复核。",
+      "issueReleaseNote": "按仓库级 Issue、Release 与提交记录判断维护信号；不把仓库活跃度当成此 Skill 的独立版本承诺。"
+    },
+    {
+      "id": "vercel-composition-patterns",
+      "name": "composition-patterns",
+      "tier": "core",
+      "repo": "vercel-labs/agent-skills",
+      "path": "skills/composition-patterns/SKILL.md",
+      "ref": "main",
+      "publisher": "Vercel Labs",
+      "license": "MIT",
+      "stageIds": [
+        5,
+        6
+      ],
+      "purpose": "帮助 React 组件避免布尔参数膨胀，并建立可组合边界。",
+      "limitations": "适用于已经出现组件 API 复杂度的 React 项目，不应在小页面上过度抽象。",
+      "permissions": [
+        "读取和重构 React 组件"
+      ],
+      "risk": "low",
+      "installType": "codex-skill",
+      "installCommand": "npx skills add vercel-labs/agent-skills",
+      "installNote": "同仓库级安装；先确认项目确实需要组件架构重构。",
+      "sourceUrl": "https://github.com/vercel-labs/agent-skills/tree/main/skills/composition-patterns",
+      "reviewedAt": "2026-07-20",
+      "score": {
+        "fit": 76,
+        "maintenance": 88,
+        "safety": 90,
+        "clarity": 91,
+        "portability": 72,
+        "popularity": 76
+      },
+      "maintenanceNote": "2026-07-20 核对时公开仓库与精确路径可访问；归档状态和最近推送由白名单更新器继续复核。",
+      "issueReleaseNote": "按仓库级 Issue、Release 与提交记录判断维护信号；不把仓库活跃度当成此 Skill 的独立版本承诺。"
+    },
+    {
+      "id": "matt-to-spec",
+      "name": "to-spec",
+      "tier": "core",
+      "repo": "mattpocock/skills",
+      "path": "skills/engineering/to-spec/SKILL.md",
+      "ref": "main",
+      "publisher": "Matt Pocock",
+      "license": "MIT",
+      "stageIds": [
+        3
+      ],
+      "purpose": "把已经讨论清楚的上下文沉淀为可验证 Spec。",
+      "limitations": "它不会替你完成业务访谈；输入上下文错误时，Spec 也会错误。",
+      "permissions": [
+        "读取项目上下文",
+        "可能写入本地 issue 或文档"
+      ],
+      "risk": "low",
+      "installType": "codex-skill",
+      "installNote": "当前仓库页面未提供本页可确认的 Codex 安装命令；先查看源码，再按 OpenAI 项目级 `.agents/skills` 规则安装。",
+      "sourceUrl": "https://github.com/mattpocock/skills/tree/main/skills/engineering/to-spec",
+      "reviewedAt": "2026-07-20",
+      "score": {
+        "fit": 98,
+        "maintenance": 94,
+        "safety": 90,
+        "clarity": 94,
+        "portability": 88,
+        "popularity": 96
+      },
+      "maintenanceNote": "2026-07-20 核对时公开仓库与精确路径可访问；归档状态和最近推送由白名单更新器继续复核。",
+      "issueReleaseNote": "按仓库级 Issue、Release 与提交记录判断维护信号；不把仓库活跃度当成此 Skill 的独立版本承诺。"
+    },
+    {
+      "id": "matt-tdd",
+      "name": "tdd",
+      "tier": "core",
+      "repo": "mattpocock/skills",
+      "path": "skills/engineering/tdd/SKILL.md",
+      "ref": "main",
+      "publisher": "Matt Pocock",
+      "license": "MIT",
+      "stageIds": [
+        5,
+        6,
+        7
+      ],
+      "purpose": "用红—绿—重构循环为功能与修复建立快速反馈。",
+      "limitations": "视觉探索和未知需求不应机械测试先行；应先原型、再固化行为。",
+      "permissions": [
+        "运行测试",
+        "创建和修改测试与实现代码"
+      ],
+      "risk": "low",
+      "installType": "codex-skill",
+      "installNote": "先审查源码；按项目级 Skill 目录安装，或使用受信任的 Skill 安装器。",
+      "sourceUrl": "https://github.com/mattpocock/skills/tree/main/skills/engineering/tdd",
+      "reviewedAt": "2026-07-20",
+      "score": {
+        "fit": 96,
+        "maintenance": 94,
+        "safety": 88,
+        "clarity": 95,
+        "portability": 90,
+        "popularity": 96
+      },
+      "maintenanceNote": "2026-07-20 核对时公开仓库与精确路径可访问；归档状态和最近推送由白名单更新器继续复核。",
+      "issueReleaseNote": "按仓库级 Issue、Release 与提交记录判断维护信号；不把仓库活跃度当成此 Skill 的独立版本承诺。"
+    },
+    {
+      "id": "matt-diagnosing-bugs",
+      "name": "diagnosing-bugs",
+      "tier": "core",
+      "repo": "mattpocock/skills",
+      "path": "skills/engineering/diagnosing-bugs/SKILL.md",
+      "ref": "main",
+      "publisher": "Matt Pocock",
+      "license": "MIT",
+      "stageIds": [
+        6,
+        7
+      ],
+      "purpose": "按复现、最小化、假设、观察、修复和回归的顺序诊断问题。",
+      "limitations": "需要可复现环境和足够日志；无法把猜测变成根因。",
+      "permissions": [
+        "读取日志",
+        "运行诊断命令",
+        "修改代码和测试"
+      ],
+      "risk": "medium",
+      "installType": "codex-skill",
+      "installNote": "源码审查后按 OpenAI Skill 目录规则安装；执行诊断命令前仍需检查权限。",
+      "sourceUrl": "https://github.com/mattpocock/skills/tree/main/skills/engineering/diagnosing-bugs",
+      "reviewedAt": "2026-07-20",
+      "score": {
+        "fit": 95,
+        "maintenance": 94,
+        "safety": 82,
+        "clarity": 95,
+        "portability": 88,
+        "popularity": 94
+      },
+      "maintenanceNote": "2026-07-20 核对时公开仓库与精确路径可访问；归档状态和最近推送由白名单更新器继续复核。",
+      "issueReleaseNote": "按仓库级 Issue、Release 与提交记录判断维护信号；不把仓库活跃度当成此 Skill 的独立版本承诺。"
+    },
+    {
+      "id": "matt-research",
+      "name": "research",
+      "tier": "core",
+      "repo": "mattpocock/skills",
+      "path": "skills/engineering/research/SKILL.md",
+      "ref": "main",
+      "publisher": "Matt Pocock",
+      "license": "MIT",
+      "stageIds": [
+        2,
+        4
+      ],
+      "purpose": "围绕高可信直接来源调查问题并沉淀带引用结论。",
+      "limitations": "需要联网与来源判断；不能保证所有网页都可访问或事实永不过期。",
+      "permissions": [
+        "联网搜索和读取来源",
+        "可能写入研究文档"
+      ],
+      "risk": "medium",
+      "installType": "codex-skill",
+      "installNote": "安装前审查联网范围和输出位置；按项目级 Skill 目录规则使用。",
+      "sourceUrl": "https://github.com/mattpocock/skills/tree/main/skills/engineering/research",
+      "reviewedAt": "2026-07-20",
+      "score": {
+        "fit": 94,
+        "maintenance": 94,
+        "safety": 78,
+        "clarity": 92,
+        "portability": 86,
+        "popularity": 92
+      },
+      "maintenanceNote": "2026-07-20 核对时公开仓库与精确路径可访问；归档状态和最近推送由白名单更新器继续复核。",
+      "issueReleaseNote": "按仓库级 Issue、Release 与提交记录判断维护信号；不把仓库活跃度当成此 Skill 的独立版本承诺。"
+    },
+    {
+      "id": "matt-grill-with-docs",
+      "name": "grill-with-docs",
+      "tier": "core",
+      "repo": "mattpocock/skills",
+      "path": "skills/engineering/grill-with-docs/SKILL.md",
+      "ref": "main",
+      "publisher": "Matt Pocock",
+      "license": "MIT",
+      "stageIds": [
+        1,
+        3,
+        4,
+        5
+      ],
+      "purpose": "对照领域文档挑战计划、澄清术语并更新上下文与 ADR。",
+      "limitations": "如果领域文档过期，会把旧错误固化；需要业务负责人参与。",
+      "permissions": [
+        "读取并修改项目文档",
+        "持续追问用户决策"
+      ],
+      "risk": "low",
+      "installType": "codex-skill",
+      "installNote": "先确保项目已有可信领域文档；按项目级 Skill 目录规则安装。",
+      "sourceUrl": "https://github.com/mattpocock/skills/tree/main/skills/engineering/grill-with-docs",
+      "reviewedAt": "2026-07-20",
+      "score": {
+        "fit": 92,
+        "maintenance": 94,
+        "safety": 88,
+        "clarity": 92,
+        "portability": 84,
+        "popularity": 90
+      },
+      "maintenanceNote": "2026-07-20 核对时公开仓库与精确路径可访问；归档状态和最近推送由白名单更新器继续复核。",
+      "issueReleaseNote": "按仓库级 Issue、Release 与提交记录判断维护信号；不把仓库活跃度当成此 Skill 的独立版本承诺。"
+    },
+    {
+      "id": "matt-code-review",
+      "name": "code-review",
+      "tier": "core",
+      "repo": "mattpocock/skills",
+      "path": "skills/engineering/code-review/SKILL.md",
+      "ref": "main",
+      "publisher": "Matt Pocock",
+      "license": "MIT",
+      "stageIds": [
+        6,
+        7
+      ],
+      "purpose": "分别从工程标准和 Spec 一致性评审代码差异。",
+      "limitations": "其仓库版可能使用并行子代理；当前环境是否支持需单独确认。",
+      "permissions": [
+        "读取 Git 差异与项目规范",
+        "可能调用子代理",
+        "不应自动合并"
+      ],
+      "risk": "medium",
+      "installType": "codex-skill",
+      "installNote": "审查其子代理要求后再安装；缺少能力时仅作为评审清单学习。",
+      "sourceUrl": "https://github.com/mattpocock/skills/tree/main/skills/engineering/code-review",
+      "reviewedAt": "2026-07-20",
+      "score": {
+        "fit": 92,
+        "maintenance": 94,
+        "safety": 80,
+        "clarity": 91,
+        "portability": 75,
+        "popularity": 90
+      },
+      "maintenanceNote": "2026-07-20 核对时公开仓库与精确路径可访问；归档状态和最近推送由白名单更新器继续复核。",
+      "issueReleaseNote": "按仓库级 Issue、Release 与提交记录判断维护信号；不把仓库活跃度当成此 Skill 的独立版本承诺。"
+    },
+    {
+      "id": "matt-prototype",
+      "name": "prototype",
+      "tier": "conditional",
+      "repo": "mattpocock/skills",
+      "path": "skills/engineering/prototype/SKILL.md",
+      "ref": "main",
+      "publisher": "Matt Pocock",
+      "license": "MIT",
+      "stageIds": [
+        4
+      ],
+      "purpose": "为设计或业务问题制作明确可丢弃的原型。",
+      "limitations": "原型必须明确退出条件，不能无声成为生产代码。",
+      "permissions": [
+        "创建本地原型文件",
+        "可能启动本地服务"
+      ],
+      "risk": "low",
+      "installType": "codex-skill",
+      "installNote": "按项目级 Skill 目录安装；在任务中明确“原型是否可丢弃”。",
+      "sourceUrl": "https://github.com/mattpocock/skills/tree/main/skills/engineering/prototype",
+      "reviewedAt": "2026-07-20",
+      "score": {
+        "fit": 86,
+        "maintenance": 94,
+        "safety": 86,
+        "clarity": 90,
+        "portability": 84,
+        "popularity": 88
+      },
+      "maintenanceNote": "2026-07-20 核对时公开仓库与精确路径可访问；归档状态和最近推送由白名单更新器继续复核。",
+      "issueReleaseNote": "按仓库级 Issue、Release 与提交记录判断维护信号；不把仓库活跃度当成此 Skill 的独立版本承诺。"
+    },
+    {
+      "id": "matt-implement",
+      "name": "implement",
+      "tier": "conditional",
+      "repo": "mattpocock/skills",
+      "path": "skills/engineering/implement/SKILL.md",
+      "ref": "main",
+      "publisher": "Matt Pocock",
+      "license": "MIT",
+      "stageIds": [
+        5,
+        6,
+        7
+      ],
+      "purpose": "从 Spec 或 tickets 驱动实现，并把测试和代码评审纳入闭环。",
+      "limitations": "是较重的编排流程；小改动使用会增加不必要仪式。",
+      "permissions": [
+        "广泛修改代码",
+        "运行测试",
+        "可能调用其他 Skills 或代理",
+        "可能创建提交"
+      ],
+      "risk": "high",
+      "installType": "codex-skill",
+      "installNote": "仅在 Spec、任务边界和提交策略都已确认时安装使用。",
+      "sourceUrl": "https://github.com/mattpocock/skills/tree/main/skills/engineering/implement",
+      "reviewedAt": "2026-07-20",
+      "score": {
+        "fit": 82,
+        "maintenance": 94,
+        "safety": 66,
+        "clarity": 88,
+        "portability": 72,
+        "popularity": 86
+      },
+      "maintenanceNote": "2026-07-20 核对时公开仓库与精确路径可访问；归档状态和最近推送由白名单更新器继续复核。",
+      "issueReleaseNote": "按仓库级 Issue、Release 与提交记录判断维护信号；不把仓库活跃度当成此 Skill 的独立版本承诺。"
+    },
+    {
+      "id": "matt-to-tickets",
+      "name": "to-tickets",
+      "tier": "conditional",
+      "repo": "mattpocock/skills",
+      "path": "skills/engineering/to-tickets/SKILL.md",
+      "ref": "main",
+      "publisher": "Matt Pocock",
+      "license": "MIT",
+      "stageIds": [
+        3,
+        6
+      ],
+      "purpose": "把 Spec 拆成带依赖关系的 tracer-bullet 垂直切片任务。",
+      "limitations": "需要适配你的 issue tracker；拆得太细会失去用户结果。",
+      "permissions": [
+        "写入本地或远程 issue tracker",
+        "可能创建多个任务"
+      ],
+      "risk": "medium",
+      "installType": "codex-skill",
+      "installNote": "安装前确认任务系统和写入范围；远程创建 issue 属于外部写操作。",
+      "sourceUrl": "https://github.com/mattpocock/skills/tree/main/skills/engineering/to-tickets",
+      "reviewedAt": "2026-07-20",
+      "score": {
+        "fit": 88,
+        "maintenance": 94,
+        "safety": 76,
+        "clarity": 91,
+        "portability": 78,
+        "popularity": 86
+      },
+      "maintenanceNote": "2026-07-20 核对时公开仓库与精确路径可访问；归档状态和最近推送由白名单更新器继续复核。",
+      "issueReleaseNote": "按仓库级 Issue、Release 与提交记录判断维护信号；不把仓库活跃度当成此 Skill 的独立版本承诺。"
+    },
+    {
+      "id": "addy-spec-driven-development",
+      "name": "spec-driven-development",
+      "tier": "study",
+      "repo": "addyosmani/agent-skills",
+      "path": "skills/spec-driven-development/SKILL.md",
+      "ref": "main",
+      "publisher": "Addy Osmani",
+      "license": "MIT",
+      "stageIds": [
+        1,
+        3
+      ],
+      "purpose": "学习如何把先写规范、再计划和实施编码成代理工作流。",
+      "limitations": "仓库 README 没有给出本页可确认的 Codex 原生安装命令；先作为方法参考。",
+      "permissions": [
+        "纯阅读时无额外权限",
+        "若移植为 Skill 可能写文档"
+      ],
+      "risk": "low",
+      "installType": "study-only",
+      "installNote": "查看源码并按需手工移植；不要直接套用其他代理平台的插件命令。",
+      "sourceUrl": "https://github.com/addyosmani/agent-skills/tree/main/skills/spec-driven-development",
+      "reviewedAt": "2026-07-20",
+      "score": {
+        "fit": 92,
+        "maintenance": 90,
+        "safety": 90,
+        "clarity": 94,
+        "portability": 72,
+        "popularity": 86
+      },
+      "maintenanceNote": "2026-07-20 核对时公开仓库与精确路径可访问；归档状态和最近推送由白名单更新器继续复核。",
+      "issueReleaseNote": "按仓库级 Issue、Release 与提交记录判断维护信号；不把仓库活跃度当成此 Skill 的独立版本承诺。"
+    },
+    {
+      "id": "addy-frontend-ui-engineering",
+      "name": "frontend-ui-engineering",
+      "tier": "study",
+      "repo": "addyosmani/agent-skills",
+      "path": "skills/frontend-ui-engineering/SKILL.md",
+      "ref": "main",
+      "publisher": "Addy Osmani",
+      "license": "MIT",
+      "stageIds": [
+        4,
+        6,
+        7
+      ],
+      "purpose": "学习组件架构、响应式、状态管理和可访问性质量门。",
+      "limitations": "规则范围较广，不能替代项目自身设计系统。",
+      "permissions": [
+        "纯阅读时无额外权限",
+        "移植后可能修改 UI 代码"
+      ],
+      "risk": "low",
+      "installType": "study-only",
+      "installNote": "先查看源码；若要安装为 Codex Skill，需按 Agent Skills 格式复核触发条件与脚本。",
+      "sourceUrl": "https://github.com/addyosmani/agent-skills/tree/main/skills/frontend-ui-engineering",
+      "reviewedAt": "2026-07-20",
+      "score": {
+        "fit": 90,
+        "maintenance": 90,
+        "safety": 88,
+        "clarity": 93,
+        "portability": 72,
+        "popularity": 84
+      },
+      "maintenanceNote": "2026-07-20 核对时公开仓库与精确路径可访问；归档状态和最近推送由白名单更新器继续复核。",
+      "issueReleaseNote": "按仓库级 Issue、Release 与提交记录判断维护信号；不把仓库活跃度当成此 Skill 的独立版本承诺。"
+    },
+    {
+      "id": "addy-security-hardening",
+      "name": "security-and-hardening",
+      "tier": "study",
+      "repo": "addyosmani/agent-skills",
+      "path": "skills/security-and-hardening/SKILL.md",
+      "ref": "main",
+      "publisher": "Addy Osmani",
+      "license": "MIT",
+      "stageIds": [
+        4,
+        5,
+        7,
+        8
+      ],
+      "purpose": "学习输入边界、密钥、身份与常见 Web 风险的工程检查。",
+      "limitations": "安全清单不是渗透测试或合规认证；需结合具体威胁模型。",
+      "permissions": [
+        "纯阅读时无额外权限",
+        "移植后可能运行依赖或安全扫描"
+      ],
+      "risk": "medium",
+      "installType": "study-only",
+      "installNote": "作为安全评审参考；运行任何扫描脚本前单独审查其网络和文件权限。",
+      "sourceUrl": "https://github.com/addyosmani/agent-skills/tree/main/skills/security-and-hardening",
+      "reviewedAt": "2026-07-20",
+      "score": {
+        "fit": 86,
+        "maintenance": 90,
+        "safety": 82,
+        "clarity": 92,
+        "portability": 70,
+        "popularity": 82
+      },
+      "maintenanceNote": "2026-07-20 核对时公开仓库与精确路径可访问；归档状态和最近推送由白名单更新器继续复核。",
+      "issueReleaseNote": "按仓库级 Issue、Release 与提交记录判断维护信号；不把仓库活跃度当成此 Skill 的独立版本承诺。"
+    },
+    {
+      "id": "addy-shipping-launch",
+      "name": "shipping-and-launch",
+      "tier": "study",
+      "repo": "addyosmani/agent-skills",
+      "path": "skills/shipping-and-launch/SKILL.md",
+      "ref": "main",
+      "publisher": "Addy Osmani",
+      "license": "MIT",
+      "stageIds": [
+        8
+      ],
+      "purpose": "学习发布前检查、灰度、监控和回滚的结构。",
+      "limitations": "通用发布流程必须映射到真实托管平台、数据和责任人。",
+      "permissions": [
+        "纯阅读时无额外权限",
+        "移植后可能操作部署"
+      ],
+      "risk": "high",
+      "installType": "study-only",
+      "installNote": "仅作发布方法参考；任何生产部署仍需人工授权。",
+      "sourceUrl": "https://github.com/addyosmani/agent-skills/tree/main/skills/shipping-and-launch",
+      "reviewedAt": "2026-07-20",
+      "score": {
+        "fit": 84,
+        "maintenance": 90,
+        "safety": 72,
+        "clarity": 92,
+        "portability": 68,
+        "popularity": 80
+      },
+      "maintenanceNote": "2026-07-20 核对时公开仓库与精确路径可访问；归档状态和最近推送由白名单更新器继续复核。",
+      "issueReleaseNote": "按仓库级 Issue、Release 与提交记录判断维护信号；不把仓库活跃度当成此 Skill 的独立版本承诺。"
+    },
+    {
+      "id": "obra-superpowers",
+      "name": "Superpowers（完整插件）",
+      "tier": "conditional",
+      "repo": "obra/superpowers",
+      "path": ".codex-plugin/plugin.json",
+      "ref": "main",
+      "publisher": "Prime Radiant / Jesse Vincent",
+      "license": "MIT",
+      "stageIds": [
+        1,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "purpose": "提供从头脑风暴、计划、TDD、子代理开发到代码评审的完整方法体系。",
+      "limitations": "流程较重，会改变整个编码代理的工作方式；不应作为新手默认或与多套编排流程同时启用。",
+      "permissions": [
+        "插件级工作流",
+        "可能创建工作树",
+        "可能调用子代理",
+        "可能运行测试和提交",
+        "可选遥测需阅读说明"
+      ],
+      "risk": "high",
+      "installType": "codex-plugin",
+      "installNote": "Codex App 中打开 Plugins，在 Coding 分类查找 Superpowers 并查看权限；不要使用其他代理平台的安装命令。",
+      "sourceUrl": "https://github.com/obra/superpowers",
+      "reviewedAt": "2026-07-20",
+      "score": {
+        "fit": 72,
+        "maintenance": 94,
+        "safety": 60,
+        "clarity": 88,
+        "portability": 82,
+        "popularity": 98
+      },
+      "maintenanceNote": "2026-07-20 核对时公开仓库与精确路径可访问；归档状态和最近推送由白名单更新器继续复核。",
+      "issueReleaseNote": "按仓库级 Issue、Release 与提交记录判断维护信号；不把仓库活跃度当成此 Skill 的独立版本承诺。"
+    }
+  ]
+}

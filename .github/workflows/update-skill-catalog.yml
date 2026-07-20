@@ -1,0 +1,40 @@
+name: Review Skill catalog metadata
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 2 * * 1"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  metadata-report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npm run skills:update-report
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+      - name: Open a review PR when metadata changed
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ -z "$(git status --porcelain -- catalog/repository-metadata.json reports/skill-catalog-update.md)" ]; then
+            echo "No metadata changes."
+            exit 0
+          fi
+          branch="automation/skill-catalog-${GITHUB_RUN_ID}"
+          git config user.name "github-actions[bot]"
+          git config user.email "${GITHUB_ACTOR_ID}+${GITHUB_ACTOR}"'@'"users.noreply.github.com"
+          git checkout -b "$branch"
+          git add catalog/repository-metadata.json reports/skill-catalog-update.md
+          git commit -m "chore: refresh Skill catalog metadata report"
+          git push origin "$branch"
+          gh pr create --base main --head "$branch" --title "Review Skill catalog metadata" --body "Automated metadata only. This PR does not change the reviewed recommendation catalog. Follow the reviewer checklist before editing catalog/skills-reviewed.json."

@@ -1,0 +1,4 @@
+# Copy this file to .privacy-denylist.local (ignored by Git) and replace the examples.
+PRIVATE_COMPANY_NAME
+PRIVATE_PROJECT_NAME
+PRIVATE_INTERNAL_DOMAIN

@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "note": "The updater reads metadata only. A repository never becomes recommended until a human updates skills-reviewed.json.",
+  "repositories": [
+    { "repo": "openai/plugins", "purpose": "OpenAI public plugin examples" },
+    { "repo": "vercel-labs/agent-skills", "purpose": "Web design and React engineering skills" },
+    { "repo": "mattpocock/skills", "purpose": "Spec, research, TDD, diagnosis and review workflows" },
+    { "repo": "addyosmani/agent-skills", "purpose": "Engineering lifecycle study candidates" },
+    { "repo": "obra/superpowers", "purpose": "Heavy workflow plugin candidate" },
+    { "repo": "openai/skills", "purpose": "Deprecated repository monitored only for historical status" }
+  ]
+}
