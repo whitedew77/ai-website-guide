@@ -27,4 +27,4 @@ The scanner is a guardrail, not proof. A human still reviews examples, screensho
 
 ## Release boundary
 
-This repository builds locally but does not publish by itself. GitHub Pages, a custom domain, analytics, production forms and public user-data collection require a separate decision and authorization.
+Validated pushes to `main` deploy only `dist/client/` through the GitHub Pages workflow. The server build is not uploaded. A custom domain, analytics, production forms and public user-data collection still require separate decisions and authorization.

@@ -4,6 +4,8 @@
 
 [![Validate public build](https://github.com/whitedew77/ai-website-guide/actions/workflows/ci.yml/badge.svg)](https://github.com/whitedew77/ai-website-guide/actions/workflows/ci.yml)
 
+[在线使用 AI 建站向导](https://whitedew77.github.io/ai-website-guide/)
+
 一个面向零基础用户的本地优先交互式教程。它把“资料百科”整理成一条可以实际执行的路线：回答 6 个问题生成网站计划，按照 8 个阶段完成证据化质量 Gate，并随时使用提示词、技术与术语库以及经过人工审核的 GitHub Skill 目录。
 
 > 当前教程内容以简体中文为主。英文标题用于国际检索，不代表目前已经提供完整英文译本。
@@ -78,7 +80,7 @@ npm run privacy:scan
 
 项目中的版本、价格、星数和维护状态都可能变化，不作为永久事实。目录更新自动化只创建元数据评审材料，不会自动修改人工审核后的推荐目录。
 
-当前仓库发布源码和测试工作流，但不自动部署生产网站。GitHub Pages、自定义域名、分析统计、表单和公共用户数据收集都需要单独决策与授权。详见 [`docs/CONTENT-AUDIT.md`](docs/CONTENT-AUDIT.md) 和 [`docs/MAINTENANCE.md`](docs/MAINTENANCE.md)。
+`main` 分支通过测试后，会把静态产物 `dist/client/` 部署到 GitHub Pages。自定义域名、分析统计、表单和公共用户数据收集仍需要单独决策与授权。详见 [`docs/CONTENT-AUDIT.md`](docs/CONTENT-AUDIT.md) 和 [`docs/MAINTENANCE.md`](docs/MAINTENANCE.md)。
 
 ## 许可证
 
