@@ -10,7 +10,57 @@ A local-first, interactive AI website roadmap builder: answer six questions to g
 
 [在线使用 AI 建站向导 / Open the live AI Website Guide](https://whitedew77.github.io/ai-website-guide/)
 
-[中文](#中文) · [English](#english)
+[图文快速上手 / Visual quick start](#图文快速上手--visual-quick-start) · [中文](#中文) · [English](#english)
+
+## 图文快速上手 / Visual quick start
+
+> 以下截图来自本项目的实际运行界面，不是概念图或 AI 生成图。示例项目“松林咖啡官网（虚构示例）”完全虚构，不包含真实客户或个人资料。
+>
+> These are screenshots of the working application, not concept art or AI-generated mockups. “Pine Grove Coffee Website (fictional example)” is entirely fictional and contains no real customer or personal data.
+
+### 1. 从首页创建计划 / Start a plan from the home screen
+
+打开[在线版](https://whitedew77.github.io/ai-website-guide/)，选择“创建新网站计划”。也可以先浏览技术、术语和 Skills 知识库。
+
+Open the [live application](https://whitedew77.github.io/ai-website-guide/) and choose “创建新网站计划” (Create a new website plan). You can also browse the technology, terminology, and Skills libraries first.
+
+![AI 建站向导实际首页 / Actual AI Website Roadmap Builder home screen](docs/images/01-home.jpg)
+
+### 2. 回答 6 个问题 / Answer six questions
+
+使用虚构或已脱敏的项目名称，依次选择网站类型、当前起点、高风险功能、内容维护者、访问地域和首要目标。
+
+Use a fictional or sanitized project name, then choose the website type, starting point, high-risk features, content owner, visitor region, and top priority.
+
+![六问项目创建向导 / Six-question project creation wizard](docs/images/02-create-project.jpg)
+
+### 3. 查看生成的路线 / Review the generated roadmap
+
+系统会给出总体进度、风险等级、今天先做的三件事，以及首选、简化和可扩展技术路线。技术建议是工程判断，不是适用于所有项目的固定答案。
+
+The application shows overall progress, risk level, three immediate actions, and primary, simpler, and scalable technology paths. Technology suggestions are engineering judgments, not universal answers.
+
+![虚构示例项目的路线总览 / Generated roadmap for the fictional example project](docs/images/03-roadmap-overview.jpg)
+
+### 4. 用证据通过每个 Gate / Pass each gate with evidence
+
+路线分为 8 个阶段。每个适用 Gate 都要填写证据链接或验收记录，再由人明确确认；只勾选完成不算通过。
+
+The roadmap has eight stages. Every applicable gate needs an evidence link or acceptance note plus explicit human confirmation; checking a box alone is not enough.
+
+![八阶段路线和证据 Gate / Eight-stage roadmap and evidence gates](docs/images/04-evidence-gates.jpg)
+
+### 5. 生成下一步提示词 / Generate the next-step prompt
+
+提示词生成器会把项目背景、当前阶段和未知项组合成可复制或下载的 Markdown。不要输入 API Key、密码、Token、真实客户个人信息或未获授权的内部资料。
+
+The prompt generator combines project context, the current stage, and unknowns into copyable or downloadable Markdown. Never enter API keys, passwords, tokens, real customer personal data, or unauthorized internal material.
+
+![已填写虚构项目的提示词生成器 / Prompt generator filled with fictional project data](docs/images/05-prompt-generator.jpg)
+
+完成一轮后，请在“我的路线”中导出 JSON；项目数据默认只保存在当前浏览器，关闭网页不会立即丢失，但清理浏览器数据或换设备会丢失本地副本。
+
+After a session, export JSON from “我的路线” (My Roadmap). Project data stays only in the current browser by default: closing the page does not immediately erase it, but clearing browser data or changing devices removes the local copy.
 
 ---
 

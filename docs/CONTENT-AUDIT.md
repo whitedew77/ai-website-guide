@@ -1,6 +1,6 @@
 # Public content audit
 
-Reviewed: 2026-07-20
+Reviewed: 2026-07-21
 
 This log records corrections made for the public handbook without naming or reproducing any private project, repository path, test data, company, customer, or internal case.
 
@@ -9,6 +9,7 @@ This log records corrections made for the public handbook without naming or repr
 | Earlier pattern | Public correction | Reason |
 |---|---|---|
 | A reference-heavy homepage | Three entry points, with the six-question wizard as the primary action | A beginner needs one first action before a reference library. |
+| README usage explained only with text | A bilingual five-step guide using screenshots of the working application and an explicitly fictional project | A public visitor should be able to understand the product and its basic workflow before running the code. |
 | Four fixed checks per stage and a fixed total | Conditional Gates by site type, declared features, region and risk | A brochure site, ecommerce site and authenticated app do not have the same evidence burden. |
 | Region selection replacing the stack recommendation | Region is an additive constraint | Hosting, network and regulatory checks can change deployment decisions without determining the entire architecture. |
 | Existing design/code treated as completed history | Earlier stages start at `待验收 / 待复核` | Existing artifacts are evidence to inspect, not proof that a Gate passed. |
@@ -25,6 +26,7 @@ This log records corrections made for the public handbook without naming or repr
 - 12 reusable prompt templates composed with project type and stage context.
 - 25 technology records and 61 glossary records, each with a direct source and review date.
 - 23 GitHub Skill/plugin candidates: 12 core, 7 conditional and 4 study-only.
+- 5 first-party interface screenshots covering the home screen, planning wizard, roadmap, evidence Gates and prompt generator. All visible project data belongs to the explicitly fictional “松林咖啡官网（虚构示例）”.
 
 Counts are build facts for this review, not marketing targets. Entries may be removed when a source, path, license or claim cannot be verified.
 
