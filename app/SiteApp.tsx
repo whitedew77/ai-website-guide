@@ -558,7 +558,7 @@ export default function SiteApp() {
             {/* The single-file offline build inlines this generated asset as a data URL. */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img className="brand-mark" src={appIcon} alt="" aria-hidden="true" />
-            <span><strong>建站向导</strong><small>Spec 到上线的证据化 SOP</small></span>
+            <span><strong>建站向导</strong><small>规划、开发、测试到部署</small></span>
           </button>
           <div className="header-actions">
             {projects.length > 0 && (
@@ -596,9 +596,9 @@ export default function SiteApp() {
             <div className="hero-panel">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img className="hero-asset" src={appIcon} alt="" aria-hidden="true" />
-              <p className="eyebrow">零基础 AI 建站向导</p>
-              <h1 id="home-title">回答 6 个问题，获得建站路线和第一条 AI 提示词</h1>
-              <p className="hero-copy">你不需要先懂框架、部署或工程术语。先告诉系统网站要解决什么，它只给当前最需要的一步。</p>
+              <p className="eyebrow">本地优先的 AI 建站路线生成器</p>
+              <h1 id="home-title">回答 6 个问题，生成从网站规划到部署上线的完整路线</h1>
+              <p className="hero-copy">面向零基础用户，把需求、技术选型、开发、测试和上线拆成可执行的 8 阶段证据 Gate。</p>
             </div>
             <div className="entry-grid" aria-label="开始方式">
               <button type="button" className="entry-card primary-entry" onClick={startWizard} data-testid="create-project">

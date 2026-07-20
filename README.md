@@ -1,6 +1,10 @@
-# AI 建站与部署：从想法到上线的零基础指南
+# AI 建站向导：6 问生成网站规划、开发与部署路线
 
-## Building and Deploying Websites with AI: A Beginner's Guide from Idea to Launch
+## AI Website Roadmap Builder: Plan, Build, Test, and Deploy
+
+一个本地优先的交互式 AI 建站路线生成器：回答 6 个问题，获得从需求规划、技术选型、开发测试到部署上线的 8 阶段执行路线。
+
+A local-first, interactive AI website roadmap builder: answer six questions to get an eight-stage path from requirements and technology choices through development, testing, and deployment.
 
 [![Validate public build](https://github.com/whitedew77/ai-website-guide/actions/workflows/ci.yml/badge.svg)](https://github.com/whitedew77/ai-website-guide/actions/workflows/ci.yml)
 
