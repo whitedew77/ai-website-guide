@@ -28,9 +28,9 @@ const css = await readFile(resolve(projectRoot, "app/globals.css"), "utf8");
 const safeCss = css.replaceAll("</style", "<\\/style");
 const safeScript = script.replaceAll("</script", "<\\/script");
 const siteUrl = "https://whitedew77.github.io/ai-website-guide/";
-const siteName = "AI 建站向导";
+const siteName = "AI 建站向导 / AI Website Roadmap Builder";
 const siteTitle = "AI 建站向导：6 问生成网站规划、开发与部署路线";
-const siteDescription = "面向零基础用户的本地优先 AI 建站路线生成器。回答 6 个问题，获得从需求规划、技术选型、开发测试到部署上线的 8 阶段路线、证据 Gate 和提示词。";
+const siteDescription = "中英双语、本地优先的 AI 建站路线生成器。Answer six questions to plan, build, test, and deploy a website through eight evidence-gated stages.";
 const structuredData = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "WebApplication",
@@ -41,13 +41,15 @@ const structuredData = JSON.stringify({
   applicationCategory: "EducationalApplication",
   operatingSystem: "Any device with a modern web browser",
   isAccessibleForFree: true,
-  inLanguage: "zh-CN",
+  inLanguage: ["zh-CN", "en"],
   featureList: [
     "六问生成 AI 建站路线",
     "八阶段证据 Gate",
     "提示词生成器",
     "本地浏览器保存与 JSON 导入导出",
-    "PWA 与单文件离线版"
+    "PWA 与单文件离线版",
+    "Complete Simplified Chinese and English interface",
+    "Six-question planning wizard and eight evidence-gated stages"
   ]
 }).replaceAll("<", "\\u003c");
 function renderHtml({ offline }) {
@@ -57,12 +59,16 @@ function renderHtml({ offline }) {
     : siteDescription;
   const onlineMetadata = offline ? "" : `  <meta name="application-name" content="${siteName}">
   <link rel="canonical" href="${siteUrl}">
+  <link rel="alternate" hreflang="zh-CN" href="${siteUrl}?lang=zh">
+  <link rel="alternate" hreflang="en" href="${siteUrl}?lang=en">
+  <link rel="alternate" hreflang="x-default" href="${siteUrl}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="${siteUrl}">
   <meta property="og:site_name" content="${siteName}">
   <meta property="og:title" content="${siteTitle}">
   <meta property="og:description" content="${siteDescription}">
   <meta property="og:locale" content="zh_CN">
+  <meta property="og:locale:alternate" content="en_US">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="${siteTitle}">
   <meta name="twitter:description" content="${siteDescription}">

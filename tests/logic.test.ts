@@ -1,6 +1,10 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { GLOSSARY, TECHNOLOGIES } from "../app/lib/knowledge";
+import { localeFromBrowser, localeFromSearch } from "../app/lib/i18n";
+import { knowledgeFor } from "../app/lib/localized-knowledge";
+import { localizeCatalog } from "../app/lib/localized-skills";
+import { workflowFor } from "../app/lib/localized-workflow";
 import {
   applicableGates,
   composePrompt,
@@ -118,4 +122,98 @@ test("knowledge and Skill records include sources and review dates", () => {
   assert.ok(core.length <= 12);
   assert.ok(REVIEWED_SKILL_CATALOG.skills.every((item) => item.repo && item.path && item.ref && item.reviewedAt));
   assert.ok(REVIEWED_SKILL_CATALOG.skills.every((item) => item.maintenanceNote && item.issueReleaseNote));
+});
+
+test("English content mirrors every reviewed Chinese content record", () => {
+  const englishWorkflow = workflowFor("en");
+  const englishKnowledge = knowledgeFor("en");
+  const englishCatalog = localizeCatalog(REVIEWED_SKILL_CATALOG, "en");
+  assert.deepEqual(englishWorkflow.stages.map((item) => item.id), STAGES.map((item) => item.id));
+  assert.deepEqual(
+    englishWorkflow.promptTemplates.map((item) => item.id),
+    PROMPT_TEMPLATES.map((item) => item.id),
+  );
+  assert.deepEqual(
+    englishKnowledge.technologies.map((item) => item.id),
+    TECHNOLOGIES.map((item) => item.id),
+  );
+  assert.deepEqual(
+    englishKnowledge.glossary.map((item) => item.id),
+    GLOSSARY.map((item) => item.id),
+  );
+  assert.deepEqual(
+    englishCatalog.skills.map((item) => item.id),
+    REVIEWED_SKILL_CATALOG.skills.map((item) => item.id),
+  );
+  const englishCopy = [
+    ...englishWorkflow.stages.flatMap((stage) => [
+      stage.title,
+      stage.plainGoal,
+      ...stage.deliverables,
+      ...stage.gates.flatMap((gate) => [gate.title, gate.help, gate.evidenceExample]),
+    ]),
+    ...englishWorkflow.promptTemplates.flatMap((prompt) => [
+      prompt.title,
+      prompt.when,
+      ...prompt.preparation,
+      ...prompt.deliverables,
+      ...prompt.acceptance,
+      ...prompt.stopConditions,
+      ...prompt.executionSteps,
+      ...prompt.fields.flatMap((field) => [field.label, field.description, field.example]),
+    ]),
+    ...englishKnowledge.technologies.flatMap((item) => [
+      item.category,
+      item.what,
+      ...item.pros,
+      ...item.cons,
+      item.chooseWhen,
+      item.avoidWhen,
+      item.source.label,
+    ]),
+    ...englishKnowledge.glossary.flatMap((item) => [
+      item.term,
+      item.category,
+      item.definition,
+      item.whyItMatters,
+      item.source.label,
+      ...(item.aliases ?? []),
+    ]),
+    ...englishCatalog.skills.flatMap((item) => [
+      item.name,
+      item.purpose,
+      item.limitations,
+      ...item.permissions,
+      item.installNote,
+      item.license,
+      item.maintenanceNote,
+      item.issueReleaseNote,
+    ]),
+  ].join("\n");
+  assert.doesNotMatch(englishCopy, /[\u3400-\u9fff]/u);
+});
+
+test("English projects produce an English roadmap summary and prompt", () => {
+  const project = createProject(
+    "Pine Grove Coffee Website (fictional example)",
+    baseAnswers,
+    "english-project",
+    "en",
+  );
+  const template = workflowFor("en").promptTemplates[0];
+  const defaults = promptDefaults(project, template, "en");
+  const prompt = composePrompt(project, template, defaults, ["audience", "businessGoal"], "en");
+  assert.match(prompt, /^# Task/m);
+  assert.match(prompt, /ask first and do not guess/i);
+  assert.match(recommendationFor(baseAnswers, "en").primary.title, /^Primary:/);
+  assert.doesNotMatch(prompt, /[\u3400-\u9fff]/u);
+});
+
+test("language selection supports query, browser default, and exactly two locales", () => {
+  assert.equal(localeFromSearch("?lang=en"), "en");
+  assert.equal(localeFromSearch("?lang=zh"), "zh");
+  assert.equal(localeFromSearch("?lang=fr"), null);
+  assert.equal(localeFromBrowser("zh-Hans-CN"), "zh");
+  assert.equal(localeFromBrowser("en-SG"), "en");
+  assert.equal(localeFromBrowser("fr-FR"), "en");
 });

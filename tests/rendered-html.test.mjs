@@ -20,12 +20,14 @@ test("server-renders the public beginner entry", async () => {
   const html = await response.text();
   assert.match(html, /<title>AI 建站向导：6 问生成网站规划、开发与部署路线<\/title>/i);
   assert.match(html, /<link rel="canonical" href="https:\/\/whitedew77\.github\.io\/ai-website-guide\/"/i);
+  assert.match(html, /hreflang="en" href="https:\/\/whitedew77\.github\.io\/ai-website-guide\/\?lang=en"/i);
   assert.match(html, /"@type":"WebApplication"/);
   assert.match(html, /回答 6 个问题/);
   assert.match(html, /生成从网站规划到部署上线的完整路线/);
   assert.match(html, /创建新网站计划/);
   assert.match(html, /继续 \/ 导入已有项目/);
   assert.match(html, /查技术、术语和 Skills/);
+  assert.match(html, />EN<\/button>/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/i);
 });
 
@@ -51,16 +53,38 @@ test("build contains a self-contained offline snapshot and reviewed catalog", as
   assert.match(offline, /<script>[\s\S]+<\/script>/);
   assert.doesNotMatch(offline, /<script[^>]+src=|<link[^>]+stylesheet/i);
   assert.match(offline, /AI 建站向导/);
+  assert.match(offline, /AI Website Roadmap Builder/);
   assert.match(staticIndex, /<link rel="manifest" href="manifest\.webmanifest">/);
   assert.match(staticIndex, /<meta property="og:title" content="AI 建站向导：6 问生成网站规划、开发与部署路线">/);
   assert.match(staticIndex, /<script type="application\/ld\+json">[\s\S]*"@type":"WebApplication"[\s\S]*<\/script>/);
+  assert.match(staticIndex, /Complete Simplified Chinese and English interface/);
   assert.doesNotMatch(staticIndex, /<script[^>]+src=|<link[^>]+stylesheet/i);
   const parsed = JSON.parse(catalog);
   assert.equal(parsed.reviewStatus, "reviewed");
   assert.ok(Array.isArray(parsed.skills) && parsed.skills.length >= 12);
   const manifest = JSON.parse(manifestText);
   assert.equal(manifest.start_url, "./");
+  assert.match(manifest.name, /AI Website Roadmap Builder/);
   assert.ok(manifest.icons.some((icon) => icon.sizes === "192x192"));
   assert.ok(manifest.icons.some((icon) => icon.sizes === "512x512"));
   assert.match(serviceWorker, /new URL\(path, self\.location\.href\)/);
+});
+
+test("README includes the five real English interface screenshots", async () => {
+  const readme = await readFile(new URL("../README.md", import.meta.url), "utf8");
+  const screenshotPaths = [
+    "docs/images/en/01-home.jpg",
+    "docs/images/en/02-create-project.jpg",
+    "docs/images/en/03-roadmap-overview.jpg",
+    "docs/images/en/04-evidence-gates.jpg",
+    "docs/images/en/05-prompt-generator.jpg",
+  ];
+
+  for (const screenshotPath of screenshotPaths) {
+    assert.ok(readme.includes(`](${screenshotPath})`), `${screenshotPath} must be linked from README`);
+    const screenshotUrl = new URL(`../${screenshotPath}`, import.meta.url);
+    const [bytes, screenshotInfo] = await Promise.all([readFile(screenshotUrl), stat(screenshotUrl)]);
+    assert.ok(screenshotInfo.size > 20_000, `${screenshotPath} should contain a real interface capture`);
+    assert.deepEqual(Array.from(bytes.subarray(0, 3)), [0xff, 0xd8, 0xff], `${screenshotPath} must be JPEG`);
+  }
 });

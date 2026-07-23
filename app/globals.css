@@ -132,6 +132,31 @@ code { overflow-wrap: anywhere; }
 .project-switcher select { max-width: 240px; padding: 0 34px 0 12px; }
 .search-button { padding: 0 10px 0 13px; color: var(--muted); cursor: pointer; }
 .search-button:hover { border-color: var(--brand); background: var(--surface); }
+.language-switcher {
+  display: inline-flex;
+  flex: 0 0 auto;
+  padding: 3px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface-2);
+}
+.language-switcher button {
+  min-height: 31px;
+  padding: 4px 9px;
+  border: 0;
+  border-radius: 7px;
+  color: var(--muted);
+  background: transparent;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 800;
+}
+.language-switcher button:hover { color: var(--brand-strong); }
+.language-switcher button.is-active {
+  color: var(--brand-strong);
+  background: white;
+  box-shadow: var(--shadow-sm);
+}
 kbd {
   margin-left: 14px;
   padding: 2px 7px;
@@ -736,6 +761,7 @@ kbd {
 @media (max-width: 420px) {
   .header-actions { display: grid; grid-template-columns: minmax(0, 1fr) auto; }
   .search-button { grid-column: 1 / -1; }
+  .language-switcher { justify-self: start; }
   .prompt-list { grid-template-columns: 1fr; }
   .button-row.compact { align-items: stretch; flex-direction: column; }
   .next-action .button-row.compact {

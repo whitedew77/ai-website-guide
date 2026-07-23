@@ -8,7 +8,7 @@ A local-first, interactive AI website roadmap builder: answer six questions to g
 
 [![Validate public build](https://github.com/whitedew77/ai-website-guide/actions/workflows/ci.yml/badge.svg)](https://github.com/whitedew77/ai-website-guide/actions/workflows/ci.yml)
 
-[在线使用 AI 建站向导 / Open the live AI Website Guide](https://whitedew77.github.io/ai-website-guide/)
+[中文界面 / Chinese interface](https://whitedew77.github.io/ai-website-guide/?lang=zh) · [English interface / 英文界面](https://whitedew77.github.io/ai-website-guide/?lang=en)
 
 [图文快速上手 / Visual quick start](#图文快速上手--visual-quick-start) · [中文](#中文) · [English](#english)
 
@@ -17,6 +17,8 @@ A local-first, interactive AI website roadmap builder: answer six questions to g
 > 以下截图来自本项目的实际运行界面，不是概念图或 AI 生成图。示例项目“松林咖啡官网（虚构示例）”完全虚构，不包含真实客户或个人资料。
 >
 > These are screenshots of the working application, not concept art or AI-generated mockups. “Pine Grove Coffee Website (fictional example)” is entirely fictional and contains no real customer or personal data.
+
+### 中文界面 / Chinese interface
 
 ### 1. 从首页创建计划 / Start a plan from the home screen
 
@@ -58,9 +60,45 @@ The prompt generator combines project context, the current stage, and unknowns i
 
 ![已填写虚构项目的提示词生成器 / Prompt generator filled with fictional project data](docs/images/05-prompt-generator.jpg)
 
+### English interface / 英文界面
+
+The English interface covers the same wizard, roadmap, evidence gates, prompt generator, technologies, glossary, Skills catalog, about page, PWA, and offline HTML. Use the `中文 / EN` switch in the header; the selection is saved in the current browser and can also be shared with `?lang=zh` or `?lang=en`.
+
+英文界面与中文界面共用同一套项目结构和 Gate 规则，路线、提示词、技术、术语和 Skills 内容均已同步翻译。页头的 `中文 / EN` 可随时切换，选择会保存在当前浏览器，也可通过 `?lang=zh` 或 `?lang=en` 分享指定语言。
+
+#### 1. Start from the English home screen
+
+Open the [English interface](https://whitedew77.github.io/ai-website-guide/?lang=en) and choose “Create a website plan.”
+
+![Actual English home screen of the AI Website Roadmap Builder](docs/images/en/01-home.jpg)
+
+#### 2. Answer the six questions in English
+
+Use a fictional or sanitized project name, then choose the site type, starting point, high-risk features, content owner, visitor region, and top priority.
+
+![English six-question website planning wizard](docs/images/en/02-create-project.jpg)
+
+#### 3. Review the generated English roadmap
+
+The application shows progress, risk, three immediate actions, and primary, simpler, and scalable technology routes.
+
+![English roadmap overview for the fictional example project](docs/images/en/03-roadmap-overview.jpg)
+
+#### 4. Work through the eight evidence-gated stages
+
+Every applicable gate needs an evidence link or acceptance note and explicit human confirmation.
+
+![English eight-stage timeline and evidence gates](docs/images/en/04-evidence-gates.jpg)
+
+#### 5. Generate an English next-step prompt
+
+The generated Markdown keeps project context, unknowns, deliverables, acceptance criteria, and stop conditions explicit.
+
+![English prompt generator with fictional project content](docs/images/en/05-prompt-generator.jpg)
+
 完成一轮后，请在“我的路线”中导出 JSON；项目数据默认只保存在当前浏览器，关闭网页不会立即丢失，但清理浏览器数据或换设备会丢失本地副本。
 
-After a session, export JSON from “我的路线” (My Roadmap). Project data stays only in the current browser by default: closing the page does not immediately erase it, but clearing browser data or changing devices removes the local copy.
+After a session, export JSON from “My Roadmap.” Project data stays only in the current browser by default: closing the page does not immediately erase it, but clearing browser data or changing devices removes the local copy.
 
 ---
 
@@ -68,7 +106,7 @@ After a session, export JSON from “我的路线” (My Roadmap). Project data 
 
 一个面向零基础用户的本地优先交互式教程。它把“资料百科”整理成一条可以实际执行的路线：回答 6 个问题生成网站计划，按照 8 个阶段完成证据化质量 Gate，并随时使用提示词、技术与术语库以及经过人工审核的 GitHub Skill 目录。
 
-> 当前网页界面和教程内容以简体中文为主；本 README 提供完整的中文与英文项目说明。
+> 网页提供完整的简体中文与英文界面。页头可切换语言；首次访问会参考浏览器语言，也可使用 `?lang=zh` 或 `?lang=en`。
 
 ### 它适合谁
 
@@ -119,7 +157,9 @@ npm run privacy:scan
 ### 主要目录
 
 - `app/lib/workflow-content.ts`：六问、八阶段和提示词内容。
+- `app/lib/localized-workflow.ts`：与中文结构一一对应的英文路线、Gate 与提示词。
 - `app/lib/knowledge.ts`：有直接来源和核对日期的技术与术语。
+- `app/lib/localized-knowledge.ts`：技术与术语的英文内容层。
 - `catalog/skills-reviewed.json`：人工审核后的 GitHub Skill 目录。
 - `scripts/update-skill-metadata.mjs`：只读取白名单仓库元数据并生成评审报告。
 - `public/tools/scan-local-skills.mjs`：用户可下载的本机只读发现脚本。
@@ -156,7 +196,7 @@ OpenAI 的归档仓库 [`openai/skills`](https://github.com/openai/skills) 不�
 
 A local-first, interactive guide for complete beginners. Instead of presenting a loose encyclopedia of resources, it turns website creation into an executable path: answer six questions to generate a plan, work through eight stages with evidence-based quality gates, and use the prompt generator, technology and terminology library, and manually reviewed GitHub Skill catalog when needed.
 
-> The application interface and tutorial content are currently primarily in Simplified Chinese. This README provides a complete English description of the project.
+> The web application has complete Simplified Chinese and English interfaces. Switch languages in the header; first visit follows the browser language, and `?lang=zh` or `?lang=en` can select a shareable language.
 
 ### Who it is for
 
@@ -207,7 +247,9 @@ Automated privacy scanning is a safety net, not proof that disclosure is impossi
 ### Project map
 
 - `app/lib/workflow-content.ts`: the six questions, eight stages, and prompt content.
+- `app/lib/localized-workflow.ts`: English roadmap, gate, and prompt content matched one-to-one with the Chinese structure.
 - `app/lib/knowledge.ts`: sourced technologies and terminology with review dates.
+- `app/lib/localized-knowledge.ts`: the English technology and glossary content layer.
 - `catalog/skills-reviewed.json`: the manually reviewed GitHub Skill catalog.
 - `scripts/update-skill-metadata.mjs`: reads metadata from allowlisted repositories and creates a review report.
 - `public/tools/scan-local-skills.mjs`: a downloadable, read-only local discovery script.
