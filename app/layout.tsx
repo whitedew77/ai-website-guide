@@ -2,10 +2,10 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 const SITE_URL = "https://whitedew77.github.io/ai-website-guide/";
-const SITE_NAME = "AI 建站向导";
+const SITE_NAME = "AI 建站向导 / AI Website Roadmap Builder";
 const SITE_TITLE = "AI 建站向导：6 问生成网站规划、开发与部署路线";
 const SITE_DESCRIPTION =
-  "面向零基础用户的本地优先 AI 建站路线生成器。回答 6 个问题，获得从需求规划、技术选型、开发测试到部署上线的 8 阶段路线、证据 Gate 和提示词。";
+  "中英双语、本地优先的 AI 建站路线生成器。Answer six questions to plan, build, test, and deploy a website through eight evidence-gated stages.";
 const STRUCTURED_DATA = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
@@ -16,13 +16,15 @@ const STRUCTURED_DATA = {
   applicationCategory: "EducationalApplication",
   operatingSystem: "Any device with a modern web browser",
   isAccessibleForFree: true,
-  inLanguage: "zh-CN",
+  inLanguage: ["zh-CN", "en"],
   featureList: [
     "六问生成 AI 建站路线",
     "八阶段证据 Gate",
     "提示词生成器",
     "本地浏览器保存与 JSON 导入导出",
     "PWA 与单文件离线版",
+    "Complete Simplified Chinese and English interface",
+    "Six-question planning wizard and eight evidence-gated stages",
   ],
 };
 
@@ -32,7 +34,13 @@ export const metadata: Metadata = {
   description: SITE_DESCRIPTION,
   manifest: "./manifest.webmanifest",
   applicationName: SITE_NAME,
-  alternates: { canonical: SITE_URL },
+  alternates: {
+    canonical: SITE_URL,
+    languages: {
+      "zh-CN": `${SITE_URL}?lang=zh`,
+      en: `${SITE_URL}?lang=en`,
+    },
+  },
   openGraph: {
     type: "website",
     url: SITE_URL,
@@ -40,6 +48,7 @@ export const metadata: Metadata = {
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
     locale: "zh_CN",
+    alternateLocale: ["en_US"],
   },
   twitter: {
     card: "summary",

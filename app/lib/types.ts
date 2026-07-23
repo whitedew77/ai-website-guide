@@ -7,6 +7,8 @@ export type WebsiteTypeId =
   | "ecommerce"
   | "internal";
 
+export type Locale = "zh" | "en";
+
 export type StartPointId =
   | "idea"
   | "materials"

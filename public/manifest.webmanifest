@@ -1,7 +1,7 @@
 {
-  "name": "AI 建站向导",
-  "short_name": "建站向导",
-  "description": "回答 6 个问题，生成从网站规划、开发测试到部署上线的 8 阶段 AI 建站路线。",
+  "name": "AI 建站向导 / AI Website Roadmap Builder",
+  "short_name": "建站向导 / Roadmap",
+  "description": "中英双语：回答 6 个问题生成 8 阶段 AI 建站路线。Bilingual: answer six questions to plan, build, test, and deploy.",
   "lang": "zh-CN",
   "start_url": "./",
   "scope": "./",
