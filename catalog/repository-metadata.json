@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "fetchedAt": "2026-08-24T03:17:34.005Z",
+  "source": "GitHub REST API",
+  "note": "Metadata is informational and does not change recommendation status.",
+  "repositories": [
+    {
+      "repo": "openai/plugins",
+      "defaultBranch": "main",
+      "archived": false,
+      "disabled": false,
+      "pushedAt": "2026-08-21T21:59:33Z",
+      "updatedAt": "2026-08-24T02:42:35Z",
+      "openIssuesCount": 40,
+      "license": null,
+      "stars": 5187,
+      "forks": 728,
+      "htmlUrl": "https://github.com/openai/plugins"
+    },
+    {
+      "repo": "vercel-labs/agent-skills",
+      "defaultBranch": "main",
+      "archived": false,
+      "disabled": false,
+      "pushedAt": "2026-08-21T18:55:51Z",
+      "updatedAt": "2026-08-24T02:56:30Z",
+      "openIssuesCount": 171,
+      "license": null,
+      "stars": 30383,
+      "forks": 2717,
+      "htmlUrl": "https://github.com/vercel-labs/agent-skills"
+    },
+    {
+      "repo": "mattpocock/skills",
+      "defaultBranch": "main",
+      "archived": false,
+      "disabled": false,
+      "pushedAt": "2026-08-21T10:56:48Z",
+      "updatedAt": "2026-08-24T03:16:50Z",
+      "openIssuesCount": 389,
+      "license": "MIT",
+      "stars": 234055,
+      "forks": 19957,
+      "htmlUrl": "https://github.com/mattpocock/skills"
+    },
+    {
+      "repo": "addyosmani/agent-skills",
+      "defaultBranch": "main",
+      "archived": false,
+      "disabled": false,
+      "pushedAt": "2026-08-21T18:15:04Z",
+      "updatedAt": "2026-08-24T03:12:47Z",
+      "openIssuesCount": 113,
+      "license": "MIT",
+      "stars": 89311,
+      "forks": 9570,
+      "htmlUrl": "https://github.com/addyosmani/agent-skills"
+    },
+    {
+      "repo": "obra/superpowers",
+      "defaultBranch": "main",
+      "archived": false,
+      "disabled": false,
+      "pushedAt": "2026-08-19T17:33:23Z",
+      "updatedAt": "2026-08-24T03:16:27Z",
+      "openIssuesCount": 310,
+      "license": "MIT",
+      "stars": 276721,
+      "forks": 24754,
+      "htmlUrl": "https://github.com/obra/superpowers"
+    },
+    {
+      "repo": "openai/skills",
+      "defaultBranch": "main",
+      "archived": false,
+      "disabled": false,
+      "pushedAt": "2026-07-14T16:47:46Z",
+      "updatedAt": "2026-08-24T02:26:21Z",
+      "openIssuesCount": 288,
+      "license": null,
+      "stars": 25144,
+      "forks": 1707,
+      "htmlUrl": "https://github.com/openai/skills"
+    }
+  ]
+}
